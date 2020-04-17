@@ -1,0 +1,39 @@
+version: ~> 1.0
+
+os: linux
+dist: bionic
+language: node_js
+
+node_js:
+  - "10"
+  - "12"
+
+cache:
+  yarn: true
+  npm: true
+
+env:
+  global:
+    - COMMIT_ID_SHORT=${TRAVIS_COMMIT::7}
+    - COMMIT_AUTHOR=$(git log -1 ${TRAVIS_COMMIT} --pretty="%aN")
+
+after_success:
+  - yarn cov:check
+
+deploy:
+  # Upload coverage report
+  - provider: azure_web_apps
+    edge: true
+    script: yarn cov:upload
+    on:
+      branch: master
+      node_js:
+        - "10"
+        - "12"
+
+#notifications:
+#  slack:
+#    template:
+#      - "*CI/CD Build <%{build_url}|#%{build_number}>* of %{repository_slug}@%{branch}\n*Build Outcome*: %{result} in %{duration}\n\n*Commit <%{compare_url}|%{commit}>* by %{author}: %{commit_message}"
+#    rooms:
+#      - monash-ie-c13:MeUlQPbEN1xphGiMBU6p0JUa#infra-alerts
