@@ -30,7 +30,7 @@ function choose() {
     console.log(valfruit)
 
     $.ajax({
-        url: 'http://ttie.eba-9cjewynp.ap-southeast-2.elasticbeanstalk.com/api/get/' + valarea + '/' + valfruit,
+        url: 'http://ttie-env.eba-9cjewynp.ap-southeast-2.elasticbeanstalk.com/api/get/' + valarea + '/' + valfruit,
         
         success:function(data) {
             console.log(data)
