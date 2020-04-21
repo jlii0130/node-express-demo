@@ -13,6 +13,10 @@ var usersRouter = require('./routes/users');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
 var prediction = require('./routes/prediction');
+var prediction2 = require('./routes/prediction2');
+var approach = require('./routes/approach');
+
+const dbController = require('./app/api/dbconnection')
 
 
 var app = express();
@@ -39,6 +43,10 @@ app.use('/users', usersRouter);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/prediction', prediction);
+app.use('/prediction2', prediction2);
+app.use('/approach', approach);
+
+app.use('/api', dbController);
    
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
