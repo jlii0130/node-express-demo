@@ -1,18 +1,19 @@
-$(document).ready(function () {
-    $.ajax({
-        url: 'http://localhost:3000/api/get/aaa',
-        success:function(data) {
-            let all = data;
-            console.log(data);
-            let fruit = $("#111");
+// $(document).ready(function () {
+//     $.ajax({
+//         //url: 'http://localhost:3000/api/get/aaa',
+//         url: 'ttie.eba-9cjewynp.ap-southeast-2.elasticbeanstalk.com',
+//         success:function(data) {
+//             let all = data;
+//             console.log(data);
+//             let fruit = $("#111");
             
-            let a = data[0].L_Name
-            let para = '<p>' + a + '</p>'
-            fruit.append(para)
+//             let a = data[0].L_Name
+//             let para = '<p>' + a + '</p>'
+//             fruit.append(para)
 
-        }
-    });
-});
+//         }
+//     });
+// });
 
 function choose() {
 
@@ -29,7 +30,7 @@ function choose() {
     console.log(valfruit)
 
     $.ajax({
-        url: 'http://localhost:3000/api/get/' + valarea + '/' + valfruit,
+        url: 'http://ttie.eba-9cjewynp.ap-southeast-2.elasticbeanstalk.com/api/get/' + valarea + '/' + valfruit,
         
         success:function(data) {
             console.log(data)
