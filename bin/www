@@ -19,7 +19,17 @@ app.set('port', port);
  * Create HTTP server.
  */
 
+ //add ssl
+/** 
+ let httpsOptions = {
+    key:fs.readFileSync(''),
+    cert:fs.readFileSync('')
+
+}
+*/ 
+
 var server = http.createServer(app);
+//var server = https.createServer(httpsOptions,app);
 
 /**
  * Listen on provided port, on all network interfaces.

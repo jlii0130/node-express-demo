@@ -29,7 +29,7 @@
       <a href="/" class="w3-bar-item w3-button">Home</a>
       <a href="./about" class="w3-bar-item w3-button">About</a> 
       <!--<a href="./contact" class="w3-bar-item w3-button">Contact</a> -->
-      <a href="./prediction" class="w3-bar-item w3-button">Prediction</a>
+      <a href="./prediction" class="w3-bar-item w3-button">Forecast</a>
     </div>
   </div>
 </div>
@@ -55,6 +55,7 @@
 <div style="height: 100px; width:auto;text-align: center">
   <div class="w3-white">Please Select Your Location: </div>
   <select id="selectionarea">
+    <option value="none" selected disabled hidden>Select from the options</option> 
     <option value="Broome">Broome</option>
     <option value="Bunbury">Bunbury</option>
     <option value="Carnarvon">Carnarvon</option>
@@ -73,6 +74,7 @@
 <div style="height: 100px; width:auto;text-align: center">
   <div class="w3-white">Please Select Your Prefer Fruit: </div>
   <select id="selectionfruit">
+    <option value="none" selected disabled hidden>Select from the options</option>  
     <option value="Grapes">Grapes</option>
     <option value="Apples">Apples</option>
     <option value="Peaches">Peaches</option>
@@ -88,13 +90,13 @@
   </select>
 </div>
 
-<div style="height: 100px; width:auto;text-align: center">
+<!--<div style="height: 100px; width:auto;text-align: center">
   <div class="w3-white">Are You Facing The Medfly Issue? </div>
   <select id="selectissue">
     <option value="yes">YES</option>
     <option value="no">NO</option>
   </select>
-</div>
+</div> -->
 
 
 <!--botton-->
@@ -133,7 +135,6 @@
   <p>Powered by THE FLY FIGHTERS</p>
 </footer>
 </body>
-</html>
 
 
     <script src="./js/index.js"></script>
