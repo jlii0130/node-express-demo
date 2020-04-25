@@ -17,6 +17,7 @@ var prediction2 = require('./routes/prediction2');
 var approach = require('./routes/approach');
 
 const dbController = require('./app/api/dbconnection')
+const sslController = require('./app/certificate/certificate')
 
 
 var app = express();
@@ -46,7 +47,11 @@ app.use('/prediction', prediction);
 app.use('/prediction2', prediction2);
 app.use('/approach', approach);
 
+
+
 app.use('/api', dbController);
+app.use('/.well-known/acme-challenge', sslController)
+
    
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
