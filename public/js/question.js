@@ -21,9 +21,24 @@ function choose() {
         
         success:function(data) {
             console.log(data)
+            
+            var para = '';
             let div = $("#qwert")
-            let para = '<p>' + data[0].Preventive_Methods + data[0].Control_Methodds+'</p>'
+            if (data.length == 0) {
+                para = '<p>(Sorry, due to our data limitation, we could not provide any suggestion for your selection)</p>'
+            } else {
+
+                let split = data[0].Control_Methodds.split(',')
+                para = '<p>Hello，here is our suggestion:</p>'
+                var i;
+                
+                for (i=0; i<split.length; i++) {
+                    para += '<p>' + (i+1) + '. ' + split[i] + '</p>'
+                }
+            }
+            div.empty()  
             div.append(para)
+            console.log(div)
         }
     })
 } 

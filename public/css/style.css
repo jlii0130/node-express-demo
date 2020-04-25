@@ -1,6 +1,6 @@
 .centered {
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 60px;
@@ -9,9 +9,18 @@
 
   .welcome{
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 60px;
+
+  }
+
+  .learnmore{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 
   }

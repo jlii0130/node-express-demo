@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET contact page. */
+/* GET forecast page. */
 router.get('/', function(req, res, next) {
-  res.render('contact', { title: 'About' });
+  res.render('solution2', { title: 'About' });
 });
 
 module.exports = router;
