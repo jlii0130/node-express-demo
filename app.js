@@ -30,11 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(__dirname, { dotfiles: 'allow'}));
 
-app.listen(80,() => {
-    console.log('http server running on port 80')
-})
 
 // ---- OAuth2.0 ---- //
 // Helmet: enhance the security
