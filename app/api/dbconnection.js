@@ -30,7 +30,7 @@ app.get("/get/:name/:fruit", (req, res) => {
 });
 
 
-app.get("/get/:name/:login", (req, res) => {
+app.get("/login/:name/:login", (req, res) => {
     var loginname = req.params.Name
     var password = req.params.id
 

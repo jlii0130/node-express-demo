@@ -54,6 +54,19 @@ app.use('/approach', approach);
 app.use('/home', home);
 app.use('/twoway', twoway);
 
+app.post('/login', function(req, res) {
+  var user={
+    username:'admin@admin.com',
+    password: 'admin'
+  }
+
+  if (req.body.username == user.username&&req.body.password==user.password) {
+    res.send(200);
+  } else {
+    res.send(404)
+  }
+  
+});
 
 
 
