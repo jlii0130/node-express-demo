@@ -56,8 +56,8 @@ app.use('/twoway', twoway);
 
 app.post('/login', function(req, res) {
   var user={
-    username:'admin@admin.com',
-    password: 'admin'
+    username:'Apple',
+    password: '12345'
   }
 
   if (req.body.username == user.username&&req.body.password==user.password) {
