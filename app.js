@@ -15,6 +15,9 @@ var solution2 = require('./routes/solution2');
 var prediction = require('./routes/prediction');
 var prediction2 = require('./routes/prediction2');
 var approach = require('./routes/approach');
+var home = require('./routes/home');
+var twoway = require('./routes/twoway');
+
 
 const dbController = require('./app/api/dbconnection')
 
@@ -29,6 +32,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -39,7 +44,6 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('combined'));
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', about);
@@ -47,6 +51,9 @@ app.use('/solution2', solution2);
 app.use('/prediction', prediction);
 app.use('/prediction2', prediction2);
 app.use('/approach', approach);
+app.use('/home', home);
+app.use('/twoway', twoway);
+
 
 
 

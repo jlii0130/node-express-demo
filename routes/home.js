@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET prediction page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+  res.render('home', { title: 'Express' });
 });
 
 module.exports = router;
