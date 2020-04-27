@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const jwt = require('jsonwebtoken')
 
 // add webpage api
 var indexRouter = require('./routes/index');
@@ -61,7 +62,16 @@ app.post('/login', function(req, res) {
   }
 
   if (req.body.username == user.username&&req.body.password==user.password) {
-    res.send(200);
+    const payload = {
+      check: true
+    };
+    var token = jwt.sign(payload, app.get('Secret'), {
+      expiresIn: 1440 //expires in 24hrs
+    })
+    res.json({
+      message: 'successful authentication',
+      token: token
+    });
   } else {
     res.send(404)
   }
@@ -88,5 +98,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+module.exports = {
+  username: 'Apple',
+  password: '12345'
+}
 
 module.exports = app;
